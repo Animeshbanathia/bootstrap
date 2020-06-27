@@ -34,7 +34,7 @@
 
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal">
+                        <a id="loginButton" role="button">
                             <span class="fa fa-sign-in"></span> Login</a>
                     </span>
                </div>
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div id="ReserveModal" class="modal fade" role="dialog">
+    <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-header">
                 <h4 class="modal-title">Reserve a Table </h4>
@@ -178,9 +178,7 @@
 
                     <p style="padding:30px;"></p>
                    
-                    <a data-toggle="modal" data-target="#ReserveModal" role="button" class="btn btn-block nav-link btn-warning"
-                    data-placement="bottom" >Reserve 
-                    Table</a>
+                    <a type="button" class="btn btn-warning btn-sm btn-block" role="button" id="reserveButton" title="Or Call us at +852 12345678">Reserve a Table</a>
                      
                         
                 </div>
@@ -361,7 +359,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/tether/dist/js/tether.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
             $("#carouselButton").click(function(){
@@ -376,6 +377,12 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+            $('#reserveButton').click(function(){
+		    $('#reserveModal').modal('show');
+	        });
+	        $('#loginButton').click(function(){
+		    $('#loginModal').modal('show');
+	        });
         });
     </script>
 
